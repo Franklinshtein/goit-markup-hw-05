@@ -9,7 +9,7 @@
   --background-team-color: #f5f4fa;
   --gap: 30px;
   --cols: 3;
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -60,6 +60,8 @@ a {
   text-decoration: none; /* прибираємо стандартне підкреслення посилань */
   color: inherit; /* прибираємо колір посилань */
   display: block;
+  transition: background-color:var(--timing-function);
+  color:var(--timing-function);
 }
 
 .header {
@@ -103,6 +105,8 @@ a {
 .navigation {
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: background-color:var(--timing-function);
+  color:var(--timing-function);
 }
 
 .navigation.current {
@@ -116,7 +120,7 @@ a {
 .current::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   display: block;
   width: 100%;
   height: 4px;
@@ -160,6 +164,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition:background-color:var(--timing-function);
+  color:var(--timing-function);
 }
 
 /* стилі іконок контактів */
@@ -171,13 +177,6 @@ a {
 .heder-icon:hover,
 .heder-icon:focus {
   fill: var(--accent-color);
-}
-
-/* час переходу для всіх елементів ховер і фокус */
-:hover,
-:focus {
-  transition: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .benefits-icon-wrap {
@@ -266,6 +265,8 @@ a:focus {
   border: 1px solid var(--accent-color);
   margin: 0 auto;
   padding: 10px 32px;
+  transition: background-color: var(--timing-function);
+  box-shadow: var(--timing-function);
 }
 
 .hero-button:hover {
@@ -369,18 +370,19 @@ p {
 
 .socials-link {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  color: #afb1b8;
+  transition:background-color:var(--timing-function);
+  color: var(--timing-function);
 }
 
 .socials-item {
   fill: currentColor;
   border-radius: 50%;
+  color: #AFB1B8;
 }
 
 .socials-item:not(:last-child) {
@@ -451,14 +453,16 @@ p {
   color: var(--text-color-white);
   letter-spacing: 0.03em;
   
-  padding: 63px 24px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: block;
 }
 
-.item:hover .overlay,
-.item:focus .overlay {
+.item-link:hover .overlay,
+.item-link:focus .overlay {
   transition: transform 250ms var(--timing-function);
   transform: translateY(0%);
+  transition-delay: 0ms;
 }
 
 .benefits-item {
@@ -475,36 +479,30 @@ p {
 }
 
 /* стилі для оверлею в секторі чим ми займаємося */
-.specialization-item::after {
-  content: "";
-  color: var(--text-color-white);
+.spec-item-box {
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  width: 370px;
+  padding: 27px;
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+/* текст */
+.spec-item-descrip {
+  color: #ffffff;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  padding: 27px;
-  position: absolute;
-  display: block;
-  height: 70px;
-  width: 370px;
-  height: 70px px;
-  bottom: 0px;
-  background: rgba(47, 48, 58, 0.8);
 }
 
-/* текст над картинками в оверлею */
-.specialization-item:nth-child(1)::after {
-  content: "декстопные приложения";
-}
-
-.specialization-item:nth-child(2)::after {
-  content: "мобильные приложения";
-}
-
-.specialization-item:nth-child(3)::after {
-  content: "дизайнерские решения";
-}
 
 /* відступи між блоками */
 .item {
@@ -582,6 +580,9 @@ p {
 
 .porfolio-nav button {
   padding: 6px 22px;
+  transition: background-color:var(--timing-function);
+  box-shadow: var(--timing-function);
+  color: var(--timing-function);
 }
 
 .clients-list {
@@ -613,6 +614,8 @@ p {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  transition:border-color:var(--timing-function);
+  color:var(--timing-function);
 }
 
 .clients-link:hover,
@@ -631,8 +634,7 @@ footer {
   background-color: var(--background-color);
 }
 
-.logo .down {
-  margin-top: 60px;
+.logo.down {
   margin-bottom: 20px;
 }
 
@@ -652,6 +654,7 @@ address ul {
 
 .address-link {
   color: rgba(255, 255, 255, 0.6);
+  transition: border-color:var(--timing-function);
 }
 
 .address-item:not(:last-child) {
@@ -676,16 +679,8 @@ address ul {
 }
 
 .join .socials-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
-  fill: currentColor;
   color: var(--text-color-white);
-  fill: #ffffff;
 }
 
 .join .socials-link:hover {
@@ -693,6 +688,8 @@ address ul {
   outline: none;
 }
 
+
+/* стилі модального вікна */
 .backdrop {
   position: fixed;
   top: 0;
@@ -717,7 +714,7 @@ address ul {
     padding: 15px;
     background-color: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
+    border-radius: 4px;
   }
 
 .modal-close-btn {
@@ -729,5 +726,6 @@ address ul {
   justify-content: center;
   align-items: center;
 background-color:#ffffff;
-border:#ffffff;
+border: transparent;
+cursor:pointer;
 }
