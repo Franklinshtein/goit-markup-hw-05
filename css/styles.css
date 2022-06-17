@@ -441,7 +441,7 @@ p {
   transition: transform 250ms var(--timing-function);
   transform: translateY(101%);
   background: rgba(33, 150, 243, 0.9);
-  opacity: 0;
+
 }
 
 .relation {
@@ -459,7 +459,6 @@ p {
 .item:focus .overlay {
   transition: transform 250ms var(--timing-function);
   transform: translateY(0%);
-  opacity: 1;
 }
 
 .benefits-item {
