@@ -103,8 +103,8 @@ a {
 .navigation {
   padding-top: 32px;
   padding-bottom: 32px;
-  transition: background-color:var(--timing-function);
-  color:250ms var(--timing-function);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: 250ms var(--timing-function);
 }
 
 .navigation.current {
@@ -371,13 +371,14 @@ p {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-item {
   fill: currentColor;
   border-radius: 50%;
-  color: #AFB1B8;
+  color: #afb1b8;
 }
 
 .socials-item:not(:last-child) {
@@ -434,11 +435,9 @@ p {
   justify-content: center;
   align-items: center;
 
-
   transition: transform 250ms var(--timing-function);
   transform: translateY(101%);
   background: rgba(33, 150, 243, 0.9);
-
 }
 
 .relation {
@@ -447,7 +446,7 @@ p {
   line-height: 1.5;
   color: var(--text-color-white);
   letter-spacing: 0.03em;
-  
+
   padding-left: 24px;
   padding-right: 24px;
   display: block;
@@ -498,7 +497,6 @@ p {
   line-height: 1.14;
 }
 
-
 /* відступи між блоками */
 .item {
   flex-basis: calc((100% - var(--gap) * (var(--cols))) / var(--cols));
@@ -512,6 +510,10 @@ p {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   padding: 20px 24px;
+}
+
+.item-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-link:hover,
@@ -575,7 +577,9 @@ p {
 
 .porfolio-nav button {
   padding: 6px 22px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list {
@@ -607,8 +611,8 @@ p {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
-  transition:border-color 250ms var(--timing-function);
-  color:var(--timing-function);
+  transition: border-color 250ms var(--timing-function);
+  color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -647,7 +651,7 @@ address ul {
 
 .address-link {
   color: rgba(255, 255, 255, 0.6);
-  transition: border-color:var(--timing-function);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-item:not(:last-child) {
@@ -681,7 +685,6 @@ address ul {
   outline: none;
 }
 
-
 /* стилі модального вікна */
 .backdrop {
   position: fixed;
@@ -692,23 +695,24 @@ address ul {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-  .backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
-  .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-height: 581px;
-    min-width: 528px;
-    padding: 15px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  }
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 581px;
+  min-width: 528px;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
 
 .modal-close-btn {
   position: absolute;
@@ -718,7 +722,7 @@ address ul {
   align-content: center;
   justify-content: center;
   align-items: center;
-background-color:#ffffff;
-border: transparent;
-cursor:pointer;
+  background-color: #ffffff;
+  border: transparent;
+  cursor: pointer;
 }
