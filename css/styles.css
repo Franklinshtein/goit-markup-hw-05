@@ -103,8 +103,7 @@ a {
 .navigation {
   padding-top: 32px;
   padding-bottom: 32px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: 250ms var(--timing-function);
+  color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation.current {
@@ -514,6 +513,7 @@ p {
 
 .item-link {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-link:hover,
@@ -651,7 +651,7 @@ address ul {
 
 .address-link {
   color: rgba(255, 255, 255, 0.6);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-item:not(:last-child) {
